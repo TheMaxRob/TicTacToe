@@ -39,9 +39,13 @@ export default function App() {
 }
 
   for (const combination of WINNING_COMBINATIONS) {
-    const firstSquare
-    const secondSquare
-    const thirdSquare
+    const firstSquare = gameboard[combination[0].row][combination[0].column];
+    const secondSquare = gameboard[combination[0].row][combination[1].column]; 
+    const thirdSquare = gameboard[combination[0].row][combination[2].column];
+
+    if (firstSquare && firstSquare === secondSquare && secondSquare === thirdSquare) {
+      
+    }
   }
 
   function handleSelectSquare(rowIndex, colIndex) {
@@ -73,7 +77,7 @@ export default function App() {
 
       <GameBoard 
         onSelectSquare={handleSelectSquare} 
-        turns={gameTurns}
+        board={gameboard}
       />
         
       </div>
